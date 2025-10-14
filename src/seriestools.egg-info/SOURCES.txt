@@ -1,0 +1,9 @@
+README.md
+pyproject.toml
+src/seriestools/__init__.py
+src/seriestools/core.py
+src/seriestools.egg-info/PKG-INFO
+src/seriestools.egg-info/SOURCES.txt
+src/seriestools.egg-info/dependency_links.txt
+src/seriestools.egg-info/top_level.txt
+tests/test_core.py
