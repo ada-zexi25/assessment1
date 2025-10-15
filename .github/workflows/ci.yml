@@ -29,8 +29,8 @@ jobs:
     - name: Lint with ruff and check formatting with black
       run: |
      
-        ruff check.
-        black --check.
+        ruff check .
+        black --check .
 
     - name: Test with pytest and check coverage
       run: |
