@@ -1,0 +1,29 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "seriestools"
+version = "0.1.0"
+authors =
+description = "A series-based trigonometric and exponential toolkit for MPM Assessment 1."
+readme = "README.md"
+requires-python = ">=3.11"
+classifiers =
+dependencies = [
+    "numpy",  # 用于向量化和pi常数
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest",
+    "pytest-cov", # 用于测试覆盖率
+    "ruff",       # 现代化的linter和formatter
+    "black",      # 代码格式化工具
+]
+docs = [
+    "sphinx",
+]
+
+[tool.setuptools.packages.find]
+where = ["src"]
