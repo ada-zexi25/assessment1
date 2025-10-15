@@ -1,0 +1,17 @@
+Metadata-Version: 2.4
+Name: seriestools
+Version: 0.1.0
+Summary: A series-based trigonometric and exponential toolkit for MPM Assessment 1.
+Author-email: zexi tan <zt25@ic.ac.uk>
+Requires-Python: >=3.11
+Description-Content-Type: text/markdown
+Requires-Dist: numpy
+Provides-Extra: dev
+Requires-Dist: pytest; extra == "dev"
+Requires-Dist: pytest-cov; extra == "dev"
+Requires-Dist: ruff; extra == "dev"
+Requires-Dist: black; extra == "dev"
+Provides-Extra: docs
+Requires-Dist: sphinx; extra == "docs"
+
+# assessment1
