@@ -1,0 +1,10 @@
+numpy
+
+[dev]
+pytest
+pytest-cov
+ruff
+black
+
+[docs]
+sphinx

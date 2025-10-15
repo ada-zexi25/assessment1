@@ -1,3 +1,55 @@
 Metadata-Version: 2.4
 Name: seriestools
-Version: 0.0.0
+Version: 0.1.0
+Summary: A series-based trigonometric and exponential toolkit for MPM Assessment 1.
+Author-email: zexi tan <zt25@ic.ac.uk>
+Requires-Python: >=3.11
+Description-Content-Type: text/markdown
+Requires-Dist: numpy
+Provides-Extra: dev
+Requires-Dist: pytest; extra == "dev"
+Requires-Dist: pytest-cov; extra == "dev"
+Requires-Dist: ruff; extra == "dev"
+Requires-Dist: black; extra == "dev"
+Provides-Extra: docs
+Requires-Dist: sphinx; extra == "docs"
+
+# assessment1
+# Series-based Trigonometric & Exponential Toolkit (seriestools)
+
+This package provides numerically reliable evaluations of common trigonometric and exponential functions using Maclaurin series expansions.[1] It is developed as part of the Modern Programming Methods Assessment 1.
+
+## Quickstart
+
+### Installation
+
+To install the package in an editable mode along with its development dependencies, clone the repository and run the following command from the project's root directory [1]:
+
+```bash
+pip install -e.“[dev]”
+```
+
+### Usage
+
+The core functions are available in the `seriestools.core` module.
+
+```python
+import seriestools.core as st
+import numpy as np
+
+x = np.pi / 4
+print(f"sin({x:.2f}) = {st.sin(x)}")
+print(f"cos({x:.2f}) = {st.cos(x)}")
+# Expected: sin(0.79) = 0.707..., cos(0.79) = 0.707...
+```
+
+## API Highlights
+
+  - `st.sin(x)`, `st.cos(x)`: Use argument reduction to a primary interval for enhanced stability and efficiency before series evaluation.[1]
+  - `st.tan(x)`: Implemented as `sin(x)/cos(x)`, it raises a `ValueError` when the input is near a pole to prevent unreliable results.[1]
+  - `st.sinc(x)`: A numerically stable implementation that avoids catastrophic cancellation near `x=0` by switching to a dedicated series expansion.[1]
+  - `st.exp(x)`: A standard implementation based on the Maclaurin series for the exponential function.[1]
+
+## Known Limitations
+
+  - **Large Inputs**: For extremely large floating-point inputs to `sin` and `cos`, the argument reduction step (`x = q * (pi/2) + r`) may suffer from a loss of precision. This is because the subtraction `x - q * (pi/2)` can be ill-conditioned when `x` is very large, potentially leading to a loss of significant figures in the reduced angle `r`.
