@@ -5,7 +5,7 @@ build-backend = "setuptools.build_meta"
 [project]
 name = "seriestools"
 version = "0.1.0"
-authors = zexi tan
+authors = “zexi tan”
 description = "A series-based trigonometric and exponential toolkit for MPM Assessment 1."
 readme = "README.md"
 requires-python = ">=3.11"
