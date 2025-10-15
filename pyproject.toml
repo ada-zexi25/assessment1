@@ -5,21 +5,23 @@ build-backend = "setuptools.build_meta"
 [project]
 name = "seriestools"
 version = "0.1.0"
-authors =
+authors = [
+    {name = "zexi tan", email = "zt25@ic.ac.uk"},
+]
 description = "A series-based trigonometric and exponential toolkit for MPM Assessment 1."
 readme = "README.md"
 requires-python = ">=3.11"
-classifiers =
+# classifiers = 
 dependencies = [
-    "numpy",  # 用于向量化和pi常数
+    "numpy",
 ]
 
 [project.optional-dependencies]
 dev = [
     "pytest",
-    "pytest-cov", # 用于测试覆盖率
-    "ruff",       # 现代化的linter和formatter
-    "black",      # 代码格式化工具
+    "pytest-cov",
+    "ruff",
+    "black",
 ]
 docs = [
     "sphinx",
